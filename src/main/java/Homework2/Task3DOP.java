@@ -16,5 +16,4 @@ public class Task3DOP {
         }
         System.out.println(factorial);
     }
-
 }
