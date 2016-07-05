@@ -14,7 +14,7 @@ public class Task5DOP {
             sum=sum+i;
         }
         System.out.println("sum= "+sum);
-        System.out.println("sum= "+sum);
+
     }
 }
 
