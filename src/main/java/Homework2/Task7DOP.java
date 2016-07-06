@@ -30,9 +30,6 @@ public class Task7DOP {
             if (br.readLine().contains("q")){
                 break;
             }
-            else {
-                continue;
-            }
         }
     }
 }
