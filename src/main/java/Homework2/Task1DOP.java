@@ -26,25 +26,25 @@ public class Task1DOP {
 
         switch (dayOfWeek) {
             case 1:
-                System.out.println("Monday");
+                System.out.println("This day is Monday");
                 break;
             case 2:
-                System.out.println("Tuesday");
+                System.out.println("This day is Tuesday");
                 break;
             case 3:
-                System.out.println("Wednesday");
+                System.out.println("This day is Wednesday");
                 break;
             case 4:
-                System.out.println("Thursday");
+                System.out.println("This day is Thursday");
                 break;
             case 5:
-                System.out.println("Friday");
+                System.out.println("This day is Friday");
                 break;
             case 6:
-                System.out.println("Saturday");
+                System.out.println("This day is Saturday");
                 break;
             case 0:
-                System.out.println("Sunday");
+                System.out.println("This day is Sunday");
                 break;
         }
     }
