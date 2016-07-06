@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * initial string is being written by user in terminal
+ */
 public class Task1 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -16,7 +19,7 @@ public class Task1 {
 
     /**
      * method splits initial string to 2 strings
-     * @param initialString
+     * @param initialString initial string
      * @return array of 2 strings
      */
     private static String[] stringSplitter (String initialString){

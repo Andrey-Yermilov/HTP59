@@ -11,18 +11,16 @@ public class Task3 {
         double firstNumber = Double.parseDouble(br.readLine());
         System.out.println("Enter second number");
         double secondNumber = Double.parseDouble(br.readLine());
-        double[] numbers = new double[2];
-        numbers[0] = firstNumber;
-        numbers[1] = secondNumber;
-        System.out.println(String.format("Quotient is %f",divider(numbers)));
+        System.out.println(String.format("Quotient is %f",divider(firstNumber, secondNumber)));
     }
 
     /**
      * method calculates quotient of 2 numbers
-     * @param numbers array of 2 numbers
+     * @param firstNumber First Number
+     * @param secondNumber Second Number
      * @return quotient of 2 numbers
      */
-    public static double divider (double[] numbers){
-        return numbers[0]/numbers[1];
+    public static double divider (double firstNumber, double secondNumber){
+        return firstNumber/secondNumber;
     }
 }

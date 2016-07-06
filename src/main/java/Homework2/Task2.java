@@ -20,7 +20,7 @@ public class Task2 {
             System.out.println(String.format("%f is less than %f", firstNumber, secondNumber));
         }
         else   {
-            System.out.println("numbers are equal");
+            System.out.println("Numbers are equal");
         }
     }
 }
