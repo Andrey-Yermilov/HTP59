@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * method replaces symbol in k=3 position with entered symbol
+ * method replaces symbol in k=3 position for each word with entered symbol
  */
 public class Task1 {
     public static void main(String[] args) throws IOException{
