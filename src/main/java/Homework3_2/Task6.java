@@ -29,7 +29,7 @@ public class Task6 {
     }
 
     /**
-     * Mehtod uses bubble sorting to sort initial array of chars
+     * Method uses bubble sorting to sort initial array of chars
      * @param arr array of chars
      * @return sorted array
      */
