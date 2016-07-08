@@ -3,7 +3,7 @@ package Homework3_2;
 public class Task2 {
     public static void main(String[] args) {
         String initialString="Returns a new string resulting from replacing all occurrences of oldChar in this string with newChar";
-        initialString = initialString.replaceAll(" ","");
+        initialString = initialString.replaceAll("[\\s]","");
         String modifiedString = initialString.toUpperCase();
         for (int i = 0; i < initialString.length(); i++) {
             System.out.print(initialString.charAt(i)+"  ");
