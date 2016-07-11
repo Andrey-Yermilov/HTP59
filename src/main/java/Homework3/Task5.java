@@ -21,7 +21,6 @@ public class Task5 {
         System.out.println();
         System.out.println(String.format("min value = %d", min));
         System.out.print(String.format("first index = %d",n));
-
     }
 }
 

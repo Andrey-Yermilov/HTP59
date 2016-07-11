@@ -7,7 +7,7 @@ public class Task4 {
         int arr[] = new int[15];
         Random rn = new Random();
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = rn.nextInt(3) + 1;
+            arr[i] = rn.nextInt(100) + 1;
             System.out.print(arr[i] + " | ");
         }
         int max=arr[0];
