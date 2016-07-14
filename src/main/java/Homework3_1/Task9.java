@@ -1,14 +1,17 @@
-package Homework3;
+package Homework3_1;
 
 import java.util.Random;
 
+/**
+ * create an array with 10 elements; rearrange all zeros to the end
+ */
 public class Task9 {
     public static void main(String[] args) {
         int arr[] = new int[10];
         Random rn = new Random();
         System.out.println("Initial array:");
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = rn.nextInt(5);
+            arr[i] = rn.nextInt(4);
             System.out.print(arr[i] + " | ");
         }
         int sortedArr[] = new int[10];

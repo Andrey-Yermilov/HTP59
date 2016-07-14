@@ -1,7 +1,10 @@
-package Homework3;
+package Homework3_1;
 
 import java.util.Random;
 
+/**
+ * create an array with 10 elements; count product of elements before 1st zero
+ */
 public class Task8 {
     public static void main(String[] args) {
         int arr[] = new int[10];
