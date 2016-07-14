@@ -1,5 +1,8 @@
 package Homework3_2;
 
+/**
+ * remove all words of a given length (n=3) started with consonant from text
+ */
 public class Task4 {
     public static void main(String[] args) {
         String initialStringEnglish="cat dog all evil camp a the at evidence map camera";
@@ -19,7 +22,7 @@ public class Task4 {
                 ) {
             correctedStringEnglish = correctedStringEnglish+word+" ";
         }
-        correctedStringEnglish=correctedStringEnglish.replaceAll("[\\s+]"," ").trim();
+        correctedStringEnglish=correctedStringEnglish.replaceAll("\\s+"," ").trim();
         System.out.println("Initial string:   "+initialStringEnglish);
         System.out.println("Corrected string: "+correctedStringEnglish);
 

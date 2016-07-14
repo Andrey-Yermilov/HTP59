@@ -1,5 +1,8 @@
 package Homework3_2;
 
+/**
+ * replace every english letter with its number in the alphabet
+ */
 public class Task2 {
     public static void main(String[] args) {
         String initialString="Returns a new string resulting from replacing all occurrences of oldChar in this string with newChar";

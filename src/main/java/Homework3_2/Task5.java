@@ -1,5 +1,8 @@
 package Homework3_2;
 
+/**
+ * define whether all symbols in the strings are unique
+ */
 public class Task5 {
     public static void main(String[] args) {
         String initialString="11qwertyuiopljhhbvfd3";

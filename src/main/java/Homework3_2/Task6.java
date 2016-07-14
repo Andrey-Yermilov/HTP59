@@ -1,5 +1,8 @@
 package Homework3_2;
 
+/**
+ *  define whether one string is rearranged another string
+ */
 public class Task6 {
     public static void main(String[] args) {
         String string1 = "bottle";
