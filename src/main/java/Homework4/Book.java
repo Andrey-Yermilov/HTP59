@@ -1,7 +1,7 @@
 package Homework4;
 
 /**
- * create class Book, display
+ * create class Book and display
  * a)all books by author
  * b)all books by publisher
  * c)all books published after given year
