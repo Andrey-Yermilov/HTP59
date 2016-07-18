@@ -98,9 +98,7 @@ public class Book {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Book book = (Book) o;
-
         if (id != book.id) return false;
         if (yearOfPublishing != book.yearOfPublishing) return false;
         if (numberOfPages != book.numberOfPages) return false;
@@ -109,7 +107,6 @@ public class Book {
         if (!author.equals(book.author)) return false;
         if (!publisher.equals(book.publisher)) return false;
         return bindingType.equals(book.bindingType);
-
     }
 
     @Override

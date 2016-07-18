@@ -19,7 +19,9 @@ public class MainClass {
         String publisher = "Penguin Books";
         int yearOfPublishing = 2003;
         System.out.println("All books of the author "+author+BookUtils.findBookByAuthor(author,books));
+        System.out.println();
         System.out.println("All books of the publisher "+publisher+BookUtils.findBookByPublisher(publisher,books));
+        System.out.println();
         System.out.println("All books published after "+yearOfPublishing+" year"+BookUtils.findBookByMinYear(yearOfPublishing,books));
     }
 }
