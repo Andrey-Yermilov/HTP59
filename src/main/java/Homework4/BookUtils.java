@@ -14,7 +14,7 @@ public class BookUtils {
         ArrayList<Book> results = new ArrayList<Book>();
         for (Book book:books
              ) {
-            if (book.getAuthor().toLowerCase().equals(author.toLowerCase())){
+            if (book.getAuthor().equalsIgnoreCase(author)){
                 results.add(book);
             }
         }
@@ -31,7 +31,7 @@ public class BookUtils {
         ArrayList<Book> results = new ArrayList<Book>();
         for (Book book:books
                 ) {
-            if (book.getPublisher().toLowerCase().equals(publisher.toLowerCase())){
+            if (book.getPublisher().equalsIgnoreCase(publisher)){
                 results.add(book);
             }
         }
