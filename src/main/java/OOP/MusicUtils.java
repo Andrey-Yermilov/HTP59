@@ -17,9 +17,12 @@ public class MusicUtils {
         File file = new File(path);
         file.createNewFile();
         BufferedWriter out = new BufferedWriter(new FileWriter(file, true));
+        int number =1;
         for (Composition track:tracks) {
+            out.write(number+"-");
             out.write(track.toString());
             out.newLine();
+            number++;
         }
         out.flush();
         System.out.println("File created");
