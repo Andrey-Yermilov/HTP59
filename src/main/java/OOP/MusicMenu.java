@@ -69,13 +69,11 @@ public class MusicMenu {
                         maxDuration = Integer.parseInt(br2.readLine());
                     } catch (IOException | NumberFormatException e) {
                         System.out.println("Entered string is not a number");
-
                         continue;
                     }
                     MusicUtils.findByDuration(tracks,minDuration,maxDuration);
                     break;
             }
-
         }
         while (c  !=  'q');
     }
