@@ -40,7 +40,6 @@ public class MusicMenu {
                         MusicUtils.recordToDisk(tracks);
                     } catch (IOException e) {
                         System.out.println("Impossible to record file");
-                        e.printStackTrace();
                     }
                     break;
                 case '2':
@@ -52,7 +51,6 @@ public class MusicMenu {
                         MusicUtils.recordToDisk(sortedTracks);
                     } catch (IOException e) {
                         System.out.println("Impossible to record file");
-                        e.printStackTrace();
                     }
                     break;
                 case '4':
@@ -61,17 +59,18 @@ public class MusicMenu {
                     int  minDuration = 0;
                     try {
                         minDuration = Integer.parseInt(br2.readLine());
-                    } catch (IOException e) {
+                    } catch (IOException | NumberFormatException e) {
                         System.out.println("Entered string is not a number");
-                        e.printStackTrace();
+                        continue;
                     }
                     System.out.println("Enter maximal duration in seconds");
                     int  maxDuration = 0;
                     try {
                         maxDuration = Integer.parseInt(br2.readLine());
-                    } catch (IOException e) {
+                    } catch (IOException | NumberFormatException e) {
                         System.out.println("Entered string is not a number");
-                        e.printStackTrace();
+
+                        continue;
                     }
                     MusicUtils.findByDuration(tracks,minDuration,maxDuration);
                     break;
