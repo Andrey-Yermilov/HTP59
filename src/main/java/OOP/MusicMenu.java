@@ -43,7 +43,7 @@ public class MusicMenu {
                     }
                     break;
                 case '2':
-                    System.out.println("Tolal duration - "+MusicUtils.durationFormatter(MusicUtils.calculateDuration(tracks)));
+                    System.out.println("Total duration - "+MusicUtils.durationFormatter(MusicUtils.calculateDuration(tracks)));
                     break;
                 case '3':
                     ArrayList<Composition> sortedTracks = MusicUtils.arrangeByStyle(tracks);
