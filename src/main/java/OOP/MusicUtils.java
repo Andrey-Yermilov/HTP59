@@ -68,6 +68,9 @@ public class MusicUtils {
         for (Composition track:selectedCompositions) {
             System.out.println(track);
         }
+        if (selectedCompositions.size()==0){
+            System.out.println("No compositions with specified duration");
+        }
     }
 
     /**
