@@ -47,8 +47,9 @@ public class MusicUtils {
      * @return arranged list of compositions
      */
     public static ArrayList<Composition> arrangeByStyle(ArrayList<Composition> tracks){
-        Collections.sort(tracks);
-        return tracks;
+        ArrayList<Composition> arrangedTracks = (ArrayList<Composition>) tracks.clone();
+        Collections.sort(arrangedTracks);
+        return arrangedTracks;
     }
 
     /**

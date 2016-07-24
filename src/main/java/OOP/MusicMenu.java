@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class MusicMenu {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
         ArrayList<Composition> tracks = new ArrayList<Composition>();
         tracks.add(new VocalComposition("Deep Purple","Perfect Strangers", 322,Style.Rock));
         tracks.add(new Composition("Acoustic Alchemy","Mr. Chow",189,Style.Instrumental));
@@ -19,7 +19,7 @@ public class MusicMenu {
         tracks.add(new VocalComposition("Claire Martin","People Make The World Go Round",244,Style.Soul));
         tracks.add(new VocalComposition("Scorpions","Wind Of Change",334,Style.Rock));
 
-        char c;
+        char c=0;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println ( "Enter:\n" +
                 "1 - to write list of compositions to disk\n" +
@@ -28,25 +28,47 @@ public class MusicMenu {
                 "4 - to find compositions by duration in seconds\n" +
                 "q - to exit") ;
         do  {
-            c = (char)  br.read();
+            try {
+                c = (char)  br.read();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             switch (c){
                 case '1':
-                    MusicUtils.recordToDisk(tracks);
+                    try {
+                        MusicUtils.recordToDisk(tracks);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case '2':
-                    System.out.print("Tolal duration - "+MusicUtils.durationFormatter(MusicUtils.calculateDuration(tracks)));
+                    System.out.println("Tolal duration - "+MusicUtils.durationFormatter(MusicUtils.calculateDuration(tracks)));
                     break;
                 case '3':
                     ArrayList<Composition> sortedTracks = MusicUtils.arrangeByStyle(tracks);
-                    MusicUtils.recordToDisk(sortedTracks);
+                    try {
+                        MusicUtils.recordToDisk(sortedTracks);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case '4':
                     System.out.println("Enter minimal duration in seconds");
                     BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
-                    int  minDuration = Integer.parseInt(br2.readLine());
+                    int  minDuration = 0;
+                    try {
+                        minDuration = Integer.parseInt(br2.readLine());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     System.out.println("Enter maximal duration in seconds");
-                    int  maxDuration = Integer.parseInt(br2.readLine());
+                    int  maxDuration = 0;
+                    try {
+                        maxDuration = Integer.parseInt(br2.readLine());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     MusicUtils.findByDuration(tracks,minDuration,maxDuration);
                     break;
             }
