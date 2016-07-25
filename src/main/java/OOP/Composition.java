@@ -3,7 +3,7 @@ package OOP;
 import java.io.Serializable;
 
 /**
- * data class for musical composition,
+ * data class for musical composition
  */
 public class Composition implements Playable, Serializable, Comparable {
     private String artistName;
