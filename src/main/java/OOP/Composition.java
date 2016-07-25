@@ -2,7 +2,10 @@ package OOP;
 
 import java.io.Serializable;
 
-public class Composition implements Playable, Serializable, Comparable{
+/**
+ * data class for musical composition,
+ */
+public class Composition implements Playable, Serializable, Comparable {
     private String artistName;
     private String trackTitle;
     private int durationInSeconds;
@@ -76,27 +79,28 @@ public class Composition implements Playable, Serializable, Comparable{
 
     @Override
     public String toString() {
-        return String.format("\'%s - %s\'...%s, style:%s", artistName,trackTitle,MusicUtils.durationFormatter(durationInSeconds),style);
+        return String.format("\'%s - %s\'...%s, style:%s", artistName, trackTitle, MusicUtils.durationFormatter(durationInSeconds), style);
     }
 
     /**
      * method is used to arrange compositions by style, then by artist name, then by track title
+     *
      * @param o composition to compare
-     * @return 0,positive or negative value
+     * @return 0, positive or negative value
      */
     @Override
     public int compareTo(Object o) {
         Composition entry = (Composition) o;
         int result = style.toString().compareTo(entry.style.toString());
-        if(result != 0) {
+        if (result != 0) {
             return result;
         }
         result = artistName.compareTo(entry.artistName);
-        if(result != 0) {
+        if (result != 0) {
             return result;
         }
         result = trackTitle.compareTo(entry.trackTitle);
-        if(result != 0) {
+        if (result != 0) {
             return result;
         }
         return 0;
