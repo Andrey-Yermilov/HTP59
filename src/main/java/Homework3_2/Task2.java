@@ -1,7 +1,7 @@
 package Homework3_2;
 
 /**
- * replace every english letter with its number in the alphabet
+ * replace every english letter with it number in the alphabet
  */
 public class Task2 {
     public static void main(String[] args) {
