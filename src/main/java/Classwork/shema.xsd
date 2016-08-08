@@ -3,7 +3,7 @@
     <xs:element name="studentList">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="student" maxOccurs="10">
+                <xs:element name="student" maxOccurs="20">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="firstName"/>
