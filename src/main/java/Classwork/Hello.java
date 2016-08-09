@@ -22,19 +22,19 @@ public class Hello {
         switch (loc){
             case 1:
                 locale = new Locale("en","US");
-                 rb =  ResourceBundle.getBundle("\\main\\java\\Classwork\\translates\\m", locale);
+                 rb =  ResourceBundle.getBundle("translates/m", locale);
                 break;
             case 2:
                 locale = new Locale("ru","RU");
-                 rb =  ResourceBundle.getBundle("\\main\\java\\Classwork\\translates\\m", locale);
+                 rb =  ResourceBundle.getBundle("translates/m", locale);
                 break;
             case 3:
                 locale = new Locale("be","BY");
-                rb =  ResourceBundle.getBundle("\\main\\java\\Classwork\\translates\\m", locale);
+                rb =  ResourceBundle.getBundle("translates/m", locale);
                 break;
             default:
                 locale = new Locale("en","US");
-                rb =  ResourceBundle.getBundle("\\main\\java\\Classwork\\translates\\m", locale);
+                rb =  ResourceBundle.getBundle("translates/m", locale);
                 break;
         }
         System.out.println(rb.getString("hello"));
