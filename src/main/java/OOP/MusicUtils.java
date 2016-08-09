@@ -3,6 +3,7 @@ package OOP;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.ResourceBundle;
 
 /**
  * utility class which allows to record list of compositions to disk, calculate total duration of
@@ -15,9 +16,9 @@ public class MusicUtils {
      * @param tracks list of compositions
      * @throws IOException
      */
-    public static void recordToDisk(ArrayList<Composition> tracks) throws IOException {
+    public static void recordToDisk(ArrayList<Composition> tracks, ResourceBundle rb) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter file name");
+                System.out.println(rb.getString("fileCreateMsg"));
         String path = "C:\\" + br.readLine() + ".txt";
         File file = new File(path);
         file.createNewFile();
@@ -30,7 +31,7 @@ public class MusicUtils {
             number++;
         }
         out.flush();
-        System.out.println("File created");
+        System.out.println(rb.getString("successCreationMsg"));
     }
 
     /**
@@ -66,7 +67,7 @@ public class MusicUtils {
      * @param minDurationInSeconds minimal duration
      * @param maxDurationInSecond  maximal duration
      */
-    public static void findByDuration(ArrayList<Composition> tracks, int minDurationInSeconds, int maxDurationInSecond) {
+    public static void findByDuration(ArrayList<Composition> tracks, int minDurationInSeconds, int maxDurationInSecond, ResourceBundle rb) {
         ArrayList<Composition> selectedCompositions = new ArrayList<Composition>();
         for (Composition track : tracks) {
             if (track.getDurationInSeconds() >= minDurationInSeconds && track.getDurationInSeconds() <= maxDurationInSecond) {
@@ -77,7 +78,7 @@ public class MusicUtils {
             System.out.println(track);
         }
         if (selectedCompositions.size() == 0) {
-            System.out.println("No compositions with specified duration");
+            System.out.println(rb.getString("noCompWithThatDurMsg"));
         }
     }
 

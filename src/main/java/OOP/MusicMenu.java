@@ -3,7 +3,11 @@ package OOP;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * main class with console menu; to perform action user should enter correct number or 'q' for exit
@@ -25,12 +29,36 @@ public class MusicMenu {
 
         char c = 0;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter:\n" +
-                "1 - to write list of compositions to disk\n" +
-                "2 - to calculate total duration of compositions\n" +
-                "3 - to rearrange compositions by style and write new list of compositions to disk\n" +
-                "4 - to find compositions by duration in seconds\n" +
-                "q - to exit");
+        System.out.println("Choose language. \n1 - EN, 2 - RU");
+
+        int loc = 0;
+        Locale locale;
+        DateFormat df;
+        Date currentDate = new Date();
+        ResourceBundle rb ;
+        try {
+            loc = Integer.parseInt(br.readLine());
+        } catch (IOException e) {
+            System.out.println("Incorrect value!");
+        }
+        switch (loc) {
+            case 1:
+                locale = new Locale("en", "US");
+                df = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT, locale);
+                rb =  ResourceBundle.getBundle("translates/music", locale);
+                break;
+            case 2:
+                locale = new Locale("ru", "RU");
+                df = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT, locale);
+                rb =  ResourceBundle.getBundle("translates/music", locale);
+                break;
+            default:
+                locale = new Locale("en", "US");
+                df = DateFormat.getDateTimeInstance(DateFormat.DEFAULT, DateFormat.DEFAULT, locale);
+                rb =  ResourceBundle.getBundle("translates/music", locale);
+        }
+        System.out.println(df.format(currentDate));
+        System.out.println(rb.getString("menu"));
         do {
             try {
                 c = (char) br.read();
@@ -41,41 +69,41 @@ public class MusicMenu {
             switch (c) {
                 case '1':
                     try {
-                        MusicUtils.recordToDisk(tracks);
+                        MusicUtils.recordToDisk(tracks,rb);
                     } catch (IOException e) {
-                        System.out.println("Impossible to record file");
+                        System.out.println(rb.getString("recordError"));
                     }
                     break;
                 case '2':
-                    System.out.println("Total duration - " + MusicUtils.durationFormatter(MusicUtils.calculateDuration(tracks)));
+                    System.out.println(rb.getString("totalDur")+" - " + MusicUtils.durationFormatter(MusicUtils.calculateDuration(tracks)));
                     break;
                 case '3':
                     ArrayList<Composition> sortedTracks = MusicUtils.arrangeByStyle(tracks);
                     try {
-                        MusicUtils.recordToDisk(sortedTracks);
+                        MusicUtils.recordToDisk(sortedTracks,rb);
                     } catch (IOException e) {
-                        System.out.println("Impossible to record file");
+                        System.out.println(rb.getString("recordError"));
                     }
                     break;
                 case '4':
-                    System.out.println("Enter minimal duration in seconds");
+                    System.out.println(rb.getString("minDurMsg"));
                     BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
                     int minDuration = 0;
                     try {
                         minDuration = Integer.parseInt(br2.readLine());
                     } catch (IOException | NumberFormatException e) {
-                        System.out.println("Entered string is not a number");
+                        System.out.println(rb.getString("notANumberError"));
                         continue;
                     }
-                    System.out.println("Enter maximal duration in seconds");
+                    System.out.println(rb.getString("maxDurMsg"));
                     int maxDuration = 0;
                     try {
                         maxDuration = Integer.parseInt(br2.readLine());
                     } catch (IOException | NumberFormatException e) {
-                        System.out.println("Entered string is not a number");
+                        System.out.println(rb.getString("notANumberError"));
                         continue;
                     }
-                    MusicUtils.findByDuration(tracks, minDuration, maxDuration);
+                    MusicUtils.findByDuration(tracks, minDuration, maxDuration, rb);
                     break;
             }
         }
