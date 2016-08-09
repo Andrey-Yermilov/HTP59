@@ -17,7 +17,7 @@ public class Hello {
         try {
              loc = Integer.parseInt(br.readLine());
         } catch (IOException e) {
-            System.out.println("Incorrect value!");
+            System.out.println("Incorrect value !");
         }
         switch (loc){
             case 1:
