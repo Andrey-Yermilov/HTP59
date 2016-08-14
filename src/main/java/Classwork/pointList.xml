@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <pointList>
-    <point m="1">
+    <point>
         <x>10</x>
         <y>30</y>
         <unit>px</unit>
@@ -10,4 +10,10 @@
         <y>75</y>
         <unit>cm</unit>
     </point>
+    <point>
+        <x>2</x>
+        <y>3</y>
+        <unit>pt</unit>
+    </point>
 </pointList>
+
