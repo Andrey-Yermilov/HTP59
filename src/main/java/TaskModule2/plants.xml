@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowers>
+    <flower>
+        <name>rose</name>
+        <soil>dirt</soil>
+        <origin>China</origin>
+        <visualParameters>
+            <trunkColour>green</trunkColour>
+            <leafColour>green</leafColour>
+            <size>big</size>
+        </visualParameters>
+        <growingTips>
+            <temperature>30</temperature>
+            <water>100</water>
+        </growingTips>
+        <multiplying>cuttings</multiplying>
+    </flower>
+    <flower>
+        <name>tulip</name>
+        <soil>podzolic</soil>
+        <origin>USA</origin>
+        <visualParameters>
+            <trunkColour>dark</trunkColour>
+            <leafColour>green</leafColour>
+            <size>middle</size>
+        </visualParameters>
+        <growingTips>
+            <temperature>35</temperature>
+            <water>120</water>
+        </growingTips>
+        <multiplying>seeds</multiplying>
+    </flower>
+</flowers>

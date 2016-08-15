@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="flowers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="flower" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="soil">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="dirt"/>
+                                        <xs:enumeration value="podzolic"/>
+                                        <xs:enumeration value="sod-podzolic"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="origin" type="xs:string"/>
+                            <xs:element name="visualParameters">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="trunkColour" type="xs:string"/>
+                                        <xs:element name="leafColour" type="xs:string"/>
+                                        <xs:element name="size" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="growingTips">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="temperature" type="xs:integer"/>
+                                        <xs:element name="water" type="xs:integer"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="multiplying">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="cuttings"/>
+                                        <xs:enumeration value="seeds"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
