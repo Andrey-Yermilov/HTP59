@@ -10,7 +10,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class DOMParser {
+public class Demarshaller {
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException, JAXBException {
         JAXBContext jc = JAXBContext.newInstance(Flowers.class);
         Unmarshaller u = jc.createUnmarshaller();
