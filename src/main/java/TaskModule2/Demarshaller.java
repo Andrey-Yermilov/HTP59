@@ -16,7 +16,7 @@ public class Demarshaller {
         Unmarshaller u = jc.createUnmarshaller();
         FileReader reader = new FileReader("src/main/java/TaskModule2/plants.xml");
         Flowers flowers = (Flowers) u.unmarshal(reader);
-        System.out.println("Created objects: ");
+        System.out.println("Created objects:");
         System.out.println(flowers);
     }
 }
