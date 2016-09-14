@@ -11,8 +11,8 @@ public class AttrInPDeleter {
                 "  <title>Применение абзацев</title>\n" +
                 " </head>\n" +
                 " <body>\n" +
-                "   <p id='p1'>В одних садах цветёт миндаль, в других метёт метель.</p>\n" +
-                "   <p id='p2'>В одних краях ещё февраль, в других - уже апрель.</p>\n" +
+                "   <pid id='p1'>В одних садах цветёт миндаль, в других метёт метель.</pid>\n" +
+                "   <pid id='p2'>В одних краях ещё февраль, в других - уже апрель.</pid>\n" +
                 "   <p id='p3' align=center>Проходит время, вечный счёт: год за год, век за век...</p>\n" +
                 "   <p id='p4'>Во всём - его неспешный ход, его кромешный бег.</p>\n" +
                 "   <p id='p5'>В году на радость и печаль по двадцать пять недель.</p>\n" +
@@ -23,7 +23,7 @@ public class AttrInPDeleter {
                 " </body>\n" +
                 "</html>";
         String correctedString;
-        correctedString = initialString.replaceAll("<p[^>]+>", "<p>");
+        correctedString = initialString.replaceAll("<p [^>]+>", "<p>");
         System.out.println(correctedString);
     }
 }
